@@ -106,14 +106,14 @@ view: mint_transactions {
     label: "Total Cash Flow"
     type: sum
     sql: ${modified_amount} ;;
-    value_format_name: usd
+    value_format_name: usd_0
     drill_fields: [category, transaction_type, total_cash_flow, total_amount]
   }
 
   measure: total_amount {
     type: sum
     sql: ${amount} ;;
-    value_format_name: usd
+    value_format_name: usd_0
     drill_fields: [transaction_details*]
   }
 
@@ -128,7 +128,7 @@ view: mint_transactions {
     type: sum
     sql: ${amount} ;;
     filters: [is_income: "Yes"]
-    value_format_name: usd
+    value_format_name: usd_0
     drill_fields: [transaction_details*]
   }
 
@@ -136,7 +136,7 @@ view: mint_transactions {
     type: sum
     sql: ${amount} ;;
     filters: [is_tax_refund: "Yes"]
-    value_format_name: usd
+    value_format_name: usd_0
     drill_fields: [transaction_details*]
   }
 
